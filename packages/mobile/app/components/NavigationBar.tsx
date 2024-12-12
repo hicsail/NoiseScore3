@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { Text, BottomNavigation } from 'react-native-paper';
 import { TouchableRipple } from 'react-native-paper';
-
-const MapRoute = () => <Text>Map</Text>;
+import Map from '../pages/Map.page';
 
 const MeasureRoute = () => <Text>Measure</Text>;
 
@@ -17,7 +16,7 @@ export default function NavigationBar() {
   ]);
 
   const renderScene = BottomNavigation.SceneMap({
-    map: MapRoute,
+    map: () => <Map />,
     measure: MeasureRoute,
     account: AccountRoute,
   });
