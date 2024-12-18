@@ -1,11 +1,9 @@
 import { useState } from 'react';
-import { Text, BottomNavigation } from 'react-native-paper';
+import { BottomNavigation } from 'react-native-paper';
 import { TouchableRipple } from 'react-native-paper';
 import Map from '../pages/Map.page';
-
-const MeasureRoute = () => <Text>Measure</Text>;
-
-const AccountRoute = () => <Text>Account</Text>;
+import Measure from '../pages/Measure.page';
+import Account from '../pages/Account.page';
 
 export default function NavigationBar() {
   const [index, setIndex] = useState(0);
@@ -17,8 +15,8 @@ export default function NavigationBar() {
 
   const renderScene = BottomNavigation.SceneMap({
     map: () => <Map />,
-    measure: MeasureRoute,
-    account: AccountRoute,
+    measure: () => <Measure />,
+    account: () => <Account />,
   });
 
   return (
