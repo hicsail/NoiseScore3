@@ -12,7 +12,8 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     [
       '@rnmapbox/maps',
       {
-        'RNMapboxMapsDownloadToken': process.env.MAPS_DOWNLOAD_TOKNE
+        'RNMapboxMapsDownloadToken': process.env.MAPS_DOWNLOAD_TOKEN,
+        "RNMapboxMapsVersion": "11.8.0"
       }
     ],
     [
