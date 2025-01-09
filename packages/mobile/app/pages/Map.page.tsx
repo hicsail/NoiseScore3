@@ -51,7 +51,7 @@ export default function Map() {
             <HeatmapLayer
               id='sound-heat'
               style={{
-                heatmapWeight: ['interpolate', ['linear'], ['get', 'db'], 0, 60, 0, 130],
+                heatmapWeight: ['interpolate', ['linear'], ['get', 'db'], 0, 0, 130, 1],
                 heatmapIntensity: ['interpolate', ['linear'], ['zoom'], 0, 1, 9, 3],
                 heatmapRadius: ['interpolate', ['linear'], ['zoom'], 0, 2, 9, 20]
               }} />
