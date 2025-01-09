@@ -43,8 +43,7 @@ export default function Map() {
    return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <View style={{ height: '100%', width: '100%' }}>
-        <MapView style={{ flex: 1 }} styleURL={JSON.stringify(style)}>
-          {/*
+        <MapView style={{ flex: 1 }}>
           <Camera zoomLevel={10} centerCoordinate={[-71.07579904594763, 42.3412156414843]} />
           <ShapeSource id='sound-heat' shape={generateTestData(LAT_MIN, LAT_MAX, LONG_MIN, LONG_MAX, 2000)}>
             <HeatmapLayer
@@ -52,10 +51,7 @@ export default function Map() {
               style={{
                 heatmapWeight: ['interpolate', ['linear'], ['get', 'db'], 0, 0, 6, 1]
               }} />
-
-
           </ShapeSource>
-          */}
         </MapView>
       </View>
     </View>
