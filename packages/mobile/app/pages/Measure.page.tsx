@@ -8,7 +8,7 @@ export default function Measure() {
     <View>
       <Text variant='headlineLarge' style={styles.statusText}>Stopped</Text>
       <DecibelChart />
-      <DecibelSummary />
+      <DecibelSummary readings={[20, 50, 100]}/>
       <Text>Controls</Text>
     </View>
   );
