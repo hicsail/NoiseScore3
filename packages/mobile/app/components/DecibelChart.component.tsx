@@ -8,7 +8,7 @@ const DATA = Array.from({ length: 31 }, (_, i) => ({
 }));
 
 export default function DecibelChart() {
-  const yFont = useFont(require('../../assets/fonts/SpaceMono-Regular.ttf'), 12);
+  const labelFont = useFont(require('../../assets/fonts/SpaceMono-Regular.ttf'), 12);
 
   return (
     <View style={styles.container}>
@@ -17,10 +17,10 @@ export default function DecibelChart() {
           data={DATA}
           xKey="day"
           yKeys={["highTmp"]}
-          yAxis={[{ formatYLabel: (label: number) => `${label} dB`, font: yFont }]}
+          yAxis={[{ formatYLabel: label => `${label}dB`, font: labelFont }]}
+          xAxis={{ formatXLabel: label => `${label}s`, font: labelFont }}
         >
           {({ points }) => (
-            // 👇 and we'll use the Line component to render a line path.
             <Line points={points.highTmp} color="green" strokeWidth={3} />
           )}
         </CartesianChart>
