@@ -12,26 +12,30 @@ export default function DecibelChart() {
 
   return (
     <View style={styles.container}>
-      <CartesianChart
-        data={DATA}
-        xKey="day"
-        yKeys={["highTmp"]}
-        yAxis={[{ formatYLabel: (label: number) => `${label} dB`, font: yFont }]}
-      >
-        {({ points }) => (
-          // 👇 and we'll use the Line component to render a line path.
-          <Line points={points.highTmp} color="green" strokeWidth={3} />
-        )}
-      </CartesianChart>
+      <View style={styles.graph}>
+        <CartesianChart
+          data={DATA}
+          xKey="day"
+          yKeys={["highTmp"]}
+          yAxis={[{ formatYLabel: (label: number) => `${label} dB`, font: yFont }]}
+        >
+          {({ points }) => (
+            // 👇 and we'll use the Line component to render a line path.
+            <Line points={points.highTmp} color="green" strokeWidth={3} />
+          )}
+        </CartesianChart>
+      </View>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
-    height: 300,
-    width: 200,
     alignContent: 'center',
-    justifyContent: 'center'
+    alignItems: 'center'
+  },
+  graph: {
+    height: 300,
+    width: 350,
   }
 });
