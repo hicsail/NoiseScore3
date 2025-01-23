@@ -31,8 +31,6 @@ export const generateTestData = (latMin: number, latMax: number, longMax: number
         coordinates: [longitude, latitude]
       }
     });
-
-    console.log(reading);
   }
 
   return {
@@ -47,7 +45,7 @@ export default function Map() {
       <View style={{ height: '100%', width: '100%' }}>
         <MapView style={{ flex: 1 }}>
           <Camera zoomLevel={10} centerCoordinate={[-71.07579904594763, 42.3412156414843]} />
-          <ShapeSource id='sound-heat' shape={generateTestData(LAT_MIN, LAT_MAX, LONG_MIN, LONG_MAX, 10)}>
+          <ShapeSource id='sound-heat' shape={generateTestData(LAT_MIN, LAT_MAX, LONG_MIN, LONG_MAX, 20)}>
             <HeatmapLayer
               id='sound-heat'
               style={{
