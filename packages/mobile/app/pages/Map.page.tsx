@@ -1,6 +1,5 @@
-import Mapbox, { Camera, CircleLayer, HeatmapLayer, MapView, ShapeSource } from '@rnmapbox/maps';
+import Mapbox, { Camera, HeatmapLayer, MapView, ShapeSource } from '@rnmapbox/maps';
 import { View } from 'react-native';
-import heatMapGeoJson from '../../assets/sample-heat.json';
 
 Mapbox.setAccessToken(process.env.EXPO_PUBLIC_MAPBOX_PUBLIC_KEY!);
 
