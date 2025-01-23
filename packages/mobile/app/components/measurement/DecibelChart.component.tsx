@@ -8,7 +8,7 @@ const DATA = Array.from({ length: 31 }, (_, i) => ({
 }));
 
 export default function DecibelChart() {
-  const labelFont = useFont(require('../../assets/fonts/SpaceMono-Regular.ttf'), 12);
+  const labelFont = useFont(require('../../../assets/fonts/SpaceMono-Regular.ttf'), 12);
 
   return (
     <View style={styles.container}>

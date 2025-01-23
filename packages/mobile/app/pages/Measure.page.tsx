@@ -1,13 +1,14 @@
 import { View, StyleSheet } from 'react-native';
 import { Text } from 'react-native-paper';
-import DecibelChart from '../components/DecibelChart.component';
+import DecibelChart from '../components/measurement/DecibelChart.component';
+import DecibelSummary from '../components/measurement/DecibelSummary.component';
 
 export default function Measure() {
   return (
     <View>
       <Text variant='headlineLarge' style={styles.statusText}>Stopped</Text>
       <DecibelChart />
-      <Text>Readings</Text>
+      <DecibelSummary />
       <Text>Controls</Text>
     </View>
   );
