@@ -1,3 +1,4 @@
+import { useFont } from '@shopify/react-native-skia';
 import { View, StyleSheet } from 'react-native';
 import { CartesianChart, Line } from 'victory-native';
 
@@ -7,9 +8,16 @@ const DATA = Array.from({ length: 31 }, (_, i) => ({
 }));
 
 export default function DecibelChart() {
+  const yFont = useFont(require('../../assets/fonts/SpaceMono-Regular.ttf'), 12);
+
   return (
     <View style={styles.container}>
-      <CartesianChart data={DATA} xKey="day" yKeys={["highTmp"]}>
+      <CartesianChart
+        data={DATA}
+        xKey="day"
+        yKeys={["highTmp"]}
+        yAxis={[{ formatYLabel: (label: number) => `${label} dB`, font: yFont }]}
+      >
         {({ points }) => (
           // 👇 and we'll use the Line component to render a line path.
           <Line points={points.highTmp} color="green" strokeWidth={3} />
@@ -22,7 +30,8 @@ export default function DecibelChart() {
 const styles = StyleSheet.create({
   container: {
     height: 300,
-    width: '90%',
-    alignContent: 'center'
+    width: 200,
+    alignContent: 'center',
+    justifyContent: 'center'
   }
 });
